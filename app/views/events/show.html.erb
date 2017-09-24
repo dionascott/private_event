@@ -1,0 +1,26 @@
+<div><h3><%= @event.name %></h3></div>
+<div>Location: <%= @event.location %></div>
+<div>Date: <%= @event.date %></div>
+<div>Creator: <%= @event.creator.name %></div>
+<br/>
+<div>
+  <h3>Attendees(<%= @attending_users.count %>)</h3>
+  <% @attending_users.each do |user| %>
+  <div>Name: <%= user.name %></div>
+  <div>Id: <%= user.id %></div>
+  <% end %>
+</div>
+<br/>
+<div>
+  <h3>Other Users(<%= @other_users.count %>)</h3>
+  <% @other_users.each do |user| %>
+    <% if session[:current_user_id] == @event.creator.id %>
+      <p>This is your event</p>
+      <div>Name: <%= user.name %></div>
+      <div>Id: <%= user.id %></div>
+    <% else %>
+      <div>Name: <%= user.name %></div>
+      <div>Id: <%= user.id %></div>
+    <% end %>
+  <% end %>
+</div>

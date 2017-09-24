@@ -1,0 +1,17 @@
+<h3>Upcoming Events</h3>
+<% @upcoming_events.each do |e| %>
+<div>Event: <%= link_to "#{e.name}", event_path(e.id) %></div>
+<div>Creator: <%= e.creator.name %></div>
+<div>Location: <%= e.location %></div>
+<div>Date: <%= e.date %></div>
+<br/>
+<% end %>
+
+<h3>Past Events</h3>
+<% @past_events.each do |e| %>
+<div>Event: <%= link_to "#{e.name}", event_path(e.id) %></div>
+<div>Creator: <%= e.creator.name %></div>
+<div>Location: <%= e.location %></div>
+<div>Date: <%= e.date %></div>
+<br/>
+<% end %>

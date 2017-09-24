@@ -1,0 +1,6 @@
+
+<%= form_for(:session, url: login_path) do |f|%>
+<%= f.label :id, "ID: " %>
+<%= f.text_field :id %>
+<%= f.submit "Submit" %>
+<% end %>

@@ -1,0 +1,29 @@
+<div>
+<%= @user.name %>
+</div>
+<div>
+  <% if @user.created_events.any? %>
+  <h3>Created Events (<%= @user.created_events.count %>)</h3>
+  <% @user.created_events.each do |c| %>
+    <div>Name: <%= c.name %></div>
+    <div>Location: <%= c.location %></div>
+    <div>Date: <%= c.date %></div>
+  <% end %>
+  <% end %>
+</div>
+<div>
+  <h3>Upcoming Attended Events (<%= @upcoming_events.count %>)</h3>
+  <% @upcoming_events.each do |e| %>
+      <div>Name: <%= e.name %></div>
+      <div>Location: <%= e.location %></div>
+      <div>Date: <%= e.date %></div>
+    <% end %>
+</div>
+<div>
+  <h3>Previously Attended Events (<%= @prev_events.count %>)</h3>
+  <% @prev_events.each do |e| %>
+      <div>Name: <%= e.name %></div>
+      <div>Location: <%= e.location %></div>
+      <div>Date: <%= e.date %></div>
+    <% end %>
+</div>
